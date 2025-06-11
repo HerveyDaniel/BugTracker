@@ -1,0 +1,28 @@
+.greyArea {
+    background-color: hsla(0, 0%, 50%, 0.644);
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.modalWindow {
+    display: block;
+    height: 45vh;
+    width: clamp(550px, 35%, 1000px);
+    background-color: hsl(33, 77%, 95%);
+    border-radius: 10px;
+    box-shadow: 8px 8px 5px;
+    padding: 20px;
+    
+}
+
+.modalContent{
+    display: flex;
+    justify-content: center;
+    height: 90%;
+    
+}

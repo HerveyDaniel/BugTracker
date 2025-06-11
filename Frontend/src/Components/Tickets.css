@@ -1,0 +1,83 @@
+.filterBar{
+    display: flex;
+    background-color: hsla(240, 24%, 87%, 0.534);
+    border: 1px solid;
+    border-radius: 10px;
+    width: clamp(700px, 30vw, 1000px);
+    min-height: 50px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+}
+
+.ticketInputContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: auto;
+    
+    flex-shrink: 1;
+}
+
+.searchForm{
+    display: flex;
+    gap: 1em;
+}
+
+select{
+    height: 100%
+}
+
+.optionsContainer{
+    display: flex;
+    gap: 1em;
+}
+
+input{
+    display: flex;
+}
+
+#priorityLabel{
+    font-weight: bold;
+}
+
+.ticketMainContainer{
+    background-color: hsla(240, 24%, 87%, 0.534);
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: clamp(700px, 80vw, 1800px);
+    margin: auto;
+    margin-top: 60px;
+    height: clamp(100px, 60vh, 1500px);
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+    overflow: auto;
+}
+
+.containerHeader{
+    display: inline-flex;
+    max-height: 3em;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid;
+    background-color: hsla(219, 78%, 49%, 0.74);
+    align-items: center;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+
+.containerHeader h2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.individualTicket{
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid;
+    display: inline-flex;
+    border-radius: 4px;
+    min-height: 3em;
+}

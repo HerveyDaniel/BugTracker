@@ -1,0 +1,79 @@
+.mainContainer{
+    display: block;
+    overflow: auto;
+    background-color: hsla(240, 24%, 87%, 0.534);
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 75vw;
+    margin: auto;
+    margin-top: 50px;
+    min-height: 35vh;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+}
+
+.commentsContainer {
+    overflow: auto;
+    background-color: hsla(240, 24%, 87%, 0.534);
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 75vw;
+    margin: auto;
+    margin-top: 50px;
+    min-height: 35vh;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+}
+
+.comments{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editDiv div{
+    margin-left: auto;
+    margin-right: 2%;
+    max-width: 25%;
+}
+
+.createCommentDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid black;
+    height: 20%;
+    margin-top: auto;
+}
+
+.createCommentDiv input{
+    flex-grow: 1;
+    height: 3em;
+}
+
+.createCommentDiv button{
+    border: 1px solid black;
+    flex-basis: 25ch;
+    height: 3em;
+}
+
+.commentContent{
+    flex-grow: 1;
+}
+
+.commentContent p{
+    margin-left: 1%;
+}
+
+.deleteCommentDiv{
+    display: flex;
+    flex-basis: 40ch;
+    margin-left: auto;
+}
+
+.deleteCommentDiv button{
+    background-color: hsl(0, 89%, 58%);
+}
+

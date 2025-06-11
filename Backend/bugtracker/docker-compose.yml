@@ -1,0 +1,93 @@
+version: "3"
+services:
+  mysqldb:
+    image: mysql:8.0
+    container_name: mysqldb
+    restart: always
+    volumes:
+      - ./initialization:/docker-entrypoint-initdb.d
+      - mysqldata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s # How often the status will be checked
+      retries: 5 # How many times to check before considering it unavailable
+      timeout: 10s # Timeout for each test run
+    environment:
+      MYSQL_DATABASE: bugtracker
+      MYSQL_ROOT_PASSWORD: Cookies345
+    ports:
+      - "3308:3306"
+    networks:
+      - bugtracker-network
+
+  mysqldemodb:
+    image: mysql:8.0
+    container_name: mysqldemodb
+    restart: always
+    volumes:
+      - mysqldemodata:/var/lib/mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s # How often the status will be checked
+      retries: 5 # How many times to check before considering it unavailable
+      timeout: 10s # Timeout for each test run
+    environment:
+      MYSQL_DATABASE: bugtrackerdemo
+      MYSQL_ROOT_PASSWORD: Cookies345
+    ports:
+      - "3307:3306"
+    networks:
+      - bugtracker-network
+
+  bugtrackerbackend:
+    container_name: bugtrackerbackend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysqldb:
+        condition: service_healthy
+      mysqldemodb:
+        condition: service_healthy
+    restart: on-failure
+    networks:
+      - bugtracker-network
+    environment:
+      - SPRING_DB1_DATASOURCE_JDBC_URL=jdbc:mysql://mysqldb:3306/bugtracker
+      - MYSQL_DATABASE=bugtracker
+      - SPRING_DB1_DATASOURCE_USERNAME=root
+      - SPRING_DB1_DATASOURCE_PASSWORD=Cookies345
+      - SPRING_DB1_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
+
+      - SPRING_DB2_DATASOURCE_JDBC_URL=jdbc:mysql://mysqldemodb:3306/bugtrackerdemo
+      - MYSQL_DATABASE2=bugtrackerdemo
+      - SPRING_DB2_DATASOURCE_USERNAME=root
+      - SPRING_DB2_DATASOURCE_PASSWORD=Cookies345
+      - SPRING_DB2_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver
+
+      - SPRING_JACKSON_SERIALIZATION_FAIL_ON_EMPTY_BEANS=false
+
+  bugtrackerfrontend:
+    container_name: bugtrackerfrontend
+    build:
+      context: ..\..\Desktop\ReactExercises\bugtracker
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - bugtrackerbackend
+    networks:
+      - bugtracker-network
+
+
+networks:
+  bugtracker-network:
+    driver: bridge
+
+volumes:
+  mysqldata:
+  mysqldemodata:
+
+

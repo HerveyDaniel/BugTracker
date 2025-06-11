@@ -1,0 +1,57 @@
+.mainProjectContainer{
+    background-color: hsla(240, 24%, 87%, 0.534);
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 75vw;
+    margin: auto;
+    margin-top: 50px;
+    height: 50vh;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+}
+
+.projectContainerContent{
+    display: flex;
+    background-color: blueviolet;
+    height: 100%;
+    
+}
+
+.projectContainerContent div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid rgb(223, 21, 189);
+}
+
+.projectTextDiv p{
+    font-size: x-large;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.editDiv{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid black;
+    height: 20%;
+    margin-top: auto;
+}
+
+.editDiv button{
+    position: absolute;
+    border: 2px solid black;
+    width: 15%;
+    max-height: 50%;
+}

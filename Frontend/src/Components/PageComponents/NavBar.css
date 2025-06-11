@@ -1,0 +1,86 @@
+.headerBar{
+    display: flex;
+    background-color: hsla(240, 24%, 87%, 0.534);
+    height: 5%;
+    width: 100%;
+    border-bottom: 3px solid hsl(240, 0%, 40%);
+}
+
+.linkContainer{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    flex-shrink: 0;
+    
+}
+
+@media (max-width: 840px){
+    .linkContainer{
+        display: flex;
+        align-items: center;
+        width: 40%;
+        
+        flex-shrink: 0;
+        gap: 2em;
+    }
+}
+
+@media (max-width: 1180px){
+    .linkContainer{
+        display: flex;
+        align-items: center;
+        width: 40%;
+        flex-shrink: 0;
+        gap: 2em;
+    }
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    flex-shrink: 0;
+    height: 100%;
+    font-size: larger;
+    
+    
+}
+
+.projectName{
+    display: flex;
+    justify-content: center;
+    
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+.logoutContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;
+    
+    min-height: 100%;
+    gap: 1em;
+    
+}
+
+.logoutContainer button{
+    margin-right: 1%;
+}
+
+.logoutButton{
+    background-color: hsl(0, 89%, 58%);
+    color: hsl(0, 0%, 0%);
+} 
+
+.displayUser{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.logoutButton{
+    background-color: hsl(0, 89%, 58%);
+    color: hsl(0, 0%, 0%);
+}

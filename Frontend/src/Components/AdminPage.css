@@ -1,0 +1,121 @@
+.projectTicketsAdmin {
+    display: flex;
+    background-color: hsl(0, 0%, 100%);
+    border: 1.5px solid;
+    border-radius: 4px;
+    min-height: 6.5em;
+    flex-shrink: 1;
+}
+
+.windowContainerAdmin{
+    display: flex;
+    gap: 5em;
+    margin-top: 60px;
+    justify-content: center;
+    height: 100vh;
+}
+
+@media (max-width: 1620px){
+    .windowContainerAdmin{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .windowContainerAdmin > div {
+        background-color: hsla(240, 24%, 87%, 0.534);
+    
+        border: 2px solid;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+        height: 75%;
+        width: clamp(640px, 30%, 1000px);
+        overflow: auto;
+        scrollbar-width: thin;
+    }
+}
+
+.priorityWindowAdmin{
+    background-color: hsla(240, 24%, 87%, 0.534);
+    
+    border: 2px solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+    height: 75%;
+    width: 30%;
+    overflow: auto;
+}
+
+.ticketTypeWindowAdmin{
+    background-color: hsla(240, 24%, 87%, 0.534);
+    
+    border: 2px solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+    height: 75%;
+    width: 30%;
+    overflow: auto;
+}
+
+.progressWindowAdmin{
+    background-color: hsla(240, 24%, 87%, 0.534);
+    
+    border: 2px solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+    height: 75%;
+    width: 30%;
+    overflow: auto;
+}
+
+.adminPageButtons{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 100%);
+    
+    border-radius: 4px;
+    min-height: 3em;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-basis: 20%;
+}
+
+.adminPageButtons > * {
+    display: flex;
+    height: 50%;
+    border: 1px solid black;
+    align-items: center;
+    width: 100%;
+}
+
+.adminPageButtons button{
+    justify-content: center;
+}
+
+
+.assignButtons{
+    margin-top: auto;
+    padding-left: 5%;
+}
+
+.assignButtons > *{
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.ticketText{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    
+    flex-basis: 50%;
+    justify-content: center;
+}
+
+.ticketText p{
+    margin: 0px;
+    padding-left: 5%;
+    font-size: larger;
+}

@@ -1,0 +1,145 @@
+.projectContainer{
+    height: 50vh;
+    display: flex;
+    gap: 5em;
+    margin-top: 60px;
+    border: 1px solid;
+    justify-content: center;
+}
+
+.project{
+    display: block;
+    background-color: hsla(240, 24%, 87%, 0.534);
+    min-width: 50vw;
+    max-height: 100%;
+    border: 2px solid;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+}
+
+
+
+.members{
+    display: block;
+    overflow: auto;
+    scrollbar-width: auto;
+    background-color: hsla(240, 24%, 87%, 0.534);
+    min-width: 25vw;
+    height: 500px;
+    border: 2px solid;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+}
+
+.tickets{
+    overflow: auto;
+    float: none;
+    display: block;
+    background-color: hsla(240, 24%, 87%, 0.534);
+    max-width: 78%;
+    height: 25vh;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    border: 2px solid;
+    box-shadow: 5px 5px 10px hsl(0, 0%, 0%);
+}
+
+.projectHeader{
+    position: relative;
+    display: inline-flex;
+    max-height: 3em;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid;
+    background-color: hsla(219, 78%, 49%, 0.74);
+    align-items: center;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+
+.projectHeader h2{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addTicketButton{
+    position: absolute;
+    min-height: 100%;
+    min-width: 13%;
+    border: 1px solid;
+}
+
+.teamHeader {
+    display: inline-flex;
+    max-height: 3em;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid;
+    background-color: hsla(219, 78%, 49%, 0.74);
+    align-items: center;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+
+.teamHeader h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ticketHeader {
+    display: inline-flex;
+    max-height: 3em;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid;
+    background-color: hsla(219, 78%, 49%, 0.74);
+    align-items: center;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+
+.ticketHeader h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projectTickets {
+    display: flex;
+    background-color: hsl(0, 0%, 100%);
+    border: 1.5px solid;
+    border-radius: 4px;
+    min-height: 3em;
+    gap: 2em;
+    
+}
+
+.projectTickets p {
+    margin-left: 2%;
+    
+    min-height: 100%;
+    flex-basis: 50ch;
+}
+
+.projectTickets h4 {
+    margin-left: 2%;
+    
+    min-height: 100%;
+    flex-basis: 50ch;
+}
+
+.projectTickets button {
+    border: 1px solid black;
+    
+    min-height: 100%;
+    flex-basis: 20ch;
+}
+
+#defaultMessage{
+    font-size: x-large;
+    justify-self: center;
+}
