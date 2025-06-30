@@ -39,8 +39,8 @@ services:
     networks:
       - bugtracker-network
 
-  bugtrackerbackend:
-    container_name: bugtrackerbackend
+  backend:
+    container_name: backend
     build:
       context: .
       dockerfile: Dockerfile
@@ -69,15 +69,15 @@ services:
 
       - SPRING_JACKSON_SERIALIZATION_FAIL_ON_EMPTY_BEANS=false
 
-  bugtrackerfrontend:
-    container_name: bugtrackerfrontend
+  frontend:
+    container_name: frontend
     build:
       context: ..\..\Desktop\ReactExercises\bugtracker
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
     depends_on:
-      - bugtrackerbackend
+      - backend
     networks:
       - bugtracker-network
 
