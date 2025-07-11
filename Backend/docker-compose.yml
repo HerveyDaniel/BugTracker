@@ -72,7 +72,7 @@ services:
   frontend:
     container_name: frontend
     build:
-      context: ..\..\Desktop\ReactExercises\bugtracker
+      context: ..\Frontend
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
