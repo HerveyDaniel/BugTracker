@@ -27,7 +27,7 @@
     align-items: center;
     gap: 2em;
     background-color: hsl(0, 0%, 100%);
-    border: 1px solid rgb(223, 21, 189);
+    border: 1px solid hsl(0, 0%, 0%);
 }
 
 .projectTextDiv p{

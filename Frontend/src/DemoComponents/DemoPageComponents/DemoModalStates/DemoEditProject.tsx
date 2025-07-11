@@ -8,11 +8,9 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { DemoProject, DemoUser } from "../../../TypeInterfaces/Types";
 
 export const DemoEditProject = () => {
-
     const {currentProject} : any = useContext(AppContext);
     const { auth } : any = useAuth();
     const token = auth?.jwt;
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
     const [projectName, setProjectName] = useState<string>("");
     const [projectDescription, setProjectDescription] = useState<string>("");
     const [selectedUsers, setSelectedUsers] = useState<any>([]);
@@ -47,7 +45,7 @@ export const DemoEditProject = () => {
     const editdemoproject = useMutation({
         mutationFn : editDemoProject,
         onSuccess : () => {
-            queryClient.invalidateQueries({queryKey : ["allDemoProjects"]})
+            queryClient.invalidateQueries({queryKey : ["allDemoProjects"]});
         }
     })
 

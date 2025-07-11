@@ -1,7 +1,7 @@
 import { DemoNavBar } from "./DemoPageComponents/DemoNavBar";
 import '../Components/IndividualTicket.css';
 import useAuth from "../Hooks/useAuth";
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Axios from "axios";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -14,11 +14,8 @@ export const DemoIndividualTicket = () => {
     const { auth } : any = useAuth();
     const token = auth?.jwt;
     const createdBy = auth?.username;
-    const [ticketId, setTicketId] = useState(id);
     const [content, setContent] = useState("");
-    const [commentIndex, setCommentIndex] = useState<any>(-1);
-    const requestData = {selectedTicket, createdBy, content};
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["DEMOADMIN"];
     const queryClient = useQueryClient();
     const navigate = useNavigate();
 
@@ -57,7 +54,6 @@ export const DemoIndividualTicket = () => {
             console.log(JSON.stringify(response?.data));
             alert("Demo comment successfully created.");
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
             alert(err);
         }
     }
@@ -83,7 +79,6 @@ export const DemoIndividualTicket = () => {
             console.log(JSON.stringify("Delete successful"));
             alert("Comment successfully deleted.");
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
             alert(err);
         }
     }
@@ -108,7 +103,7 @@ export const DemoIndividualTicket = () => {
         <DemoNavBar></DemoNavBar>
         <div className="mainProjectContainer">
             <div className="containerHeader"> 
-                <h2>{demoticketbyid?.data?.ticketId} - {demoticketbyid?.data?.ticketTitle}</h2>
+                <h2>Ticket ID#:{demoticketbyid?.data?.ticketId} {demoticketbyid?.data?.ticketTitle}</h2>
             </div>
             <div className="projectContainerContent">
                 <div className="projectTextDiv">

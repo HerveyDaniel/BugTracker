@@ -13,7 +13,6 @@ export const DemoAdminPage = () => {
     const {setModalContent, setDemoModalState, selectedUserId, setSelectedUserId, setCurrentProject, setSelectedUser} : any = useContext(AppContext);
     const { auth } : any = useAuth();
     const token = auth?.jwt;
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
     const [id, setId] = useState<any>({});
     const [selectedIdValue, setSelectedIdValue] = useState<any>(0);
     const queryClient = useQueryClient();

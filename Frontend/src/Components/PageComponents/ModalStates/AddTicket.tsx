@@ -3,13 +3,13 @@ import './ModalContent.css'
 import Axios from "axios";
 import useAuth from '../../../Hooks/useAuth';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { Project, Ticket, User } from '../../../TypeInterfaces/Types';
+import { Project, Ticket } from '../../../TypeInterfaces/Types';
 
 export const AddTicket = () => {
     const { auth } : any = useAuth();
     const token = auth?.jwt;
     const id = auth?.currentUserId;
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["ADMIN"];
     const [ticketTitle, setTicketTitle] = useState<string>("");
     const [ticketInfo, setTicketInfo] = useState<string>("");
     const [priorityStatus, setPriorityStatus] = useState<any>("");

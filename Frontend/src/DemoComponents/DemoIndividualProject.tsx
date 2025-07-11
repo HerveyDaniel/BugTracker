@@ -9,7 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import { DemoProject, DemoTicket } from '../TypeInterfaces/Types';
 
 export const DemoIndividualProject = () => {
-    const { currentProject, setSelectedTicket, setModalContent, setDemoModalState} = useContext<any>(AppContext);
+    const { setSelectedTicket, setModalContent, setDemoModalState} = useContext<any>(AppContext);
     const { auth } : any = useAuth();
     const token = auth?.jwt;
     let currentProjectId : number = 0;
@@ -44,7 +44,7 @@ export const DemoIndividualProject = () => {
         <DemoNavBar></DemoNavBar>
         <div className="mainProjectContainer">
             <div className="projectHeader">
-                <h2>Project Id#:{demoProjectById?.projectId} {demoProjectById?.projectName}</h2>
+                <h2>Project ID#:{demoProjectById?.projectId} {demoProjectById?.projectName}</h2>
             </div>
             <div className="projectContainerContent">
                 <div className="projectTextDiv">

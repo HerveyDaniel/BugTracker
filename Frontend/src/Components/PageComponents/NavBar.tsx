@@ -7,7 +7,7 @@ export const NavBar = () => {
     const { auth } : any = useAuth();
     const currentUser = auth?.username;
     const { setAuth } : any = useAuth();
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["ADMIN"];
 
     const logout = () => {
         setAuth({});

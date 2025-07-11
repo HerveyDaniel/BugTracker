@@ -16,11 +16,10 @@ export const DemoTickets = () => {
     const [progress, setProgress] = useState("");
     const [type, setType] = useState("");
     const [projectId, setProjectId] = useState<number>(0);
-    
     const { auth } : any = useAuth();
     const token = auth?.jwt;
     const id = auth?.currentUserId;
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["DEMOADMIN"];
     const queryClient = useQueryClient();
 
     function checkRole(auth : any){
@@ -163,7 +162,6 @@ export const DemoTickets = () => {
             console.log(JSON.stringify(response?.data));
             alert("Demo ticket successfully acquired.")
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
             alert(err);
         }
     }

@@ -7,7 +7,7 @@ export const DemoNavBar = () => {
     const { auth } : any = useAuth();
     const currentUser = auth?.username;
     const { setAuth } : any = useAuth();
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["DEMOADMIN"];
 
     const logout = () => {
         setAuth({});
@@ -25,7 +25,7 @@ export const DemoNavBar = () => {
                     }
             </div>
             <div className="projectName">
-                <h2>Bug Tracker</h2>
+                <h2>BugTracker</h2>
             </div>
             <div className="logoutContainer">
                 <div className="displayUser">Hello, {currentUser}</div>

@@ -3,13 +3,13 @@ import Axios from "axios";
 import useAuth from "../../../Hooks/useAuth";
 import '../../../Components/PageComponents/ModalStates/ModalContent.css'
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { DemoProject, DemoTicket, DemoUser } from "../../../TypeInterfaces/Types";
+import { DemoProject, DemoTicket } from "../../../TypeInterfaces/Types";
 
 export const DemoAddTicket = () => {
     const { auth } : any = useAuth();
     const token = auth?.jwt;
     const id = auth?.currentUserId;
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["DEMOADMIN"];
     const [ticketTitle, setTicketTitle] = useState<string>("");
     const [ticketInfo, setTicketInfo] = useState<string>("");
     const [priorityStatus, setPriorityStatus] = useState<any>("");

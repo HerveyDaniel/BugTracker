@@ -13,7 +13,6 @@ export const DemoProjects = () => {
     const token = auth?.jwt;
     const id = auth?.currentUserId;
     const {setUsers, setCurrentProject, setSelectedTicket, setDemoModalState, setModalContent} : any = useContext(AppContext);
-
     const navigate = useNavigate();
     const authRole = ["DEMOADMIN"];
     const [userProject, setUserProject] = useState<any>({});

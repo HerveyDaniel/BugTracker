@@ -19,7 +19,7 @@ export const Tickets = () => {
     const navigate = useNavigate();
     const token = auth?.jwt;
     const id = auth?.currentUserId;
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["ADMIN"];
     const queryClient = useQueryClient();
 
     function checkRole(auth : any){
@@ -129,15 +129,15 @@ export const Tickets = () => {
     const getAllProjectTickets = async () => {
 
         try {
-        const response = await Axios.get<Ticket[]>("http://localhost:8080/api/admin/ticket/allProjecttickets",
-            {
-                headers: {'Authorization': `Bearer ${token}`},
-            }
-        );
-        console.log(JSON.stringify(response?.data));
-        return response?.data;
-    } catch (err) {
-        alert(err);
+            const response = await Axios.get<Ticket[]>("http://localhost:8080/api/admin/ticket/allProjecttickets",
+                {
+                    headers: {'Authorization': `Bearer ${token}`},
+                }
+            );
+            console.log(JSON.stringify(response?.data));
+            return response?.data;
+        } catch (err) {
+            alert(err);
         }      
     }
 

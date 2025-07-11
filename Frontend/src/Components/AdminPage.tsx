@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState, useReducer} from 'react'
-import { useQuery, useMutation, useQueryClient, QueryClient } from '@tanstack/react-query'
+import { useContext, useEffect, useState } from 'react'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import './AdminPage.css'
 import { NavBar } from './PageComponents/NavBar'
 import { AppContext } from '../App'
@@ -10,13 +10,10 @@ import { Project, Ticket, User } from '../TypeInterfaces/Types'
 import { useNavigate } from 'react-router-dom'
 
 export const AdminPage = () => {
-const {setModalContent, setModalState, selectedUserId, setSelectedUserId, setCurrentProject, currentProject, 
-    setSelectedUser, updateAllTickets} : any = useContext(AppContext);
-
+const {setModalContent, setModalState, selectedUserId, setSelectedUserId, setCurrentProject, setSelectedUser} : any = useContext(AppContext);
 const { auth } : any = useAuth();
 const navigate = useNavigate();
 const token = auth?.jwt;
-const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
 const [id, setId] = useState<any>({});
 const [selectedIdValue, setSelectedIdValue] = useState<any>(0);
 const queryClient = useQueryClient();
@@ -51,7 +48,7 @@ const getAllTickets = async () => {
     console.log(JSON.stringify(response?.data));
     return response?.data;
     } catch (err) {
-    
+        alert(err);
     }      
 }
 
@@ -70,7 +67,7 @@ const getAllProjects = async () => {
     console.log(JSON.stringify(response?.data));
     return response?.data;
     } catch (err) {
-    
+        alert(err);
     }      
 }
 
@@ -89,7 +86,7 @@ const getUserById = async () => {
     console.log(JSON.stringify(response?.data));
     setSelectedUser(response?.data);
     } catch (err) {
-    
+        alert(err);
     }      
 }
 
@@ -103,7 +100,7 @@ const deleteProject = async ({deleteProjectId} : any) => {
             );
             alert("Project successfully deleted.");
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
+            alert(err);
         }
     } else {
         return
@@ -127,7 +124,7 @@ const deleteTicket = async ({deleteTicketId} : any) => {
             );
             alert("Ticket successfully deleted.");
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
+            alert(err);
         }
     } else {
         return
@@ -154,7 +151,6 @@ const deleteUser = async ({deleteUserId} : any) => {
             );
             alert("User successfully deleted.");
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
             alert(err);
         }
     } else {
@@ -186,7 +182,7 @@ const assignTicket = async ({id, ticketId} : any) => {
         alert("Ticket has been successfully assigned.");
         return response?.data;
     } catch (err) {
-        /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
+        alert(err);
     }
 }
 

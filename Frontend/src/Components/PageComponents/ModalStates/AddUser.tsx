@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState, useReducer} from "react";
+import { useEffect, useState } from "react";
 import useAuth from "../../../Hooks/useAuth";
 import Select from 'react-select';
 import Axios from "axios";
@@ -9,7 +9,6 @@ import { Project, User } from "../../../TypeInterfaces/Types";
 export const AddUser = () => {
     const { auth } : any = useAuth();
     const token = auth?.jwt;
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [assignedProject, setAssignedProject] = useState<any>()

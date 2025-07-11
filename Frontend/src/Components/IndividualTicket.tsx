@@ -14,10 +14,8 @@ export const IndividualTicket = () => {
     const { auth } : any = useAuth();
     const token = auth?.jwt;
     const createdBy = auth?.username;
-    const [ticketId, setTicketId] = useState(id);
     const [content, setContent] = useState("");
-    const requestData = {selectedTicket, createdBy, content};
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["ADMIN"];
     const queryClient = useQueryClient();
     const navigate = useNavigate();
 
@@ -53,7 +51,7 @@ export const IndividualTicket = () => {
             console.log(JSON.stringify(response?.data));
             alert("Comment successfully created.");
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
+            alert(err);
         }
     }
 
@@ -78,7 +76,7 @@ export const IndividualTicket = () => {
             console.log(JSON.stringify("Delete successful"));
             alert("Comment successfully deleted.");
         } catch (err) {
-            /* IMPLEMENT ERROR HANDLING FOR FAILED LOGIN/SERVER RESPONSE */
+            alert(err);
         }
     }
 

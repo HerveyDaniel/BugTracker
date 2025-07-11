@@ -9,7 +9,6 @@ import { DemoProject, DemoUser } from "../../../TypeInterfaces/Types";
 export const DemoAddUser = () => {
     const { auth } : any = useAuth();
     const token = auth?.jwt;
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [assignedproject, setAssignedproject] = useState<any>()
@@ -94,7 +93,7 @@ export const DemoAddUser = () => {
                     <label>Username:</label>
                 </div>
                 <div className="modalInputBar">
-                    <input type="text"  placeholder="UserName..." onChange={(e) => setUsername(e.target.value)}/>
+                    <input type="text"  placeholder="Username..." onChange={(e) => setUsername(e.target.value)}/>
                 </div>
             </div>
 

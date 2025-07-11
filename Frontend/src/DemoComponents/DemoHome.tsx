@@ -1,15 +1,15 @@
 import '../Components/Home.css'
 import { DemoNavBar } from './DemoPageComponents/DemoNavBar';
 import Axios from "axios";
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import useAuth from '../Hooks/useAuth';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { DemoProject, DemoTicket } from '../TypeInterfaces/Types';
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../App';
 
-export const DemoHome = ({setDemoModalState}: any, {demoAuthProp}: any) => {
-    const {setModalState, setModalContent, setSelectedTicket} = useContext<any>(AppContext);
+export const DemoHome = ({setDemoModalState}: any) => {
+    const {setModalContent, setSelectedTicket} = useContext<any>(AppContext);
     const { auth } : any = useAuth();
     const navigate = useNavigate();
     const token = auth?.jwt;

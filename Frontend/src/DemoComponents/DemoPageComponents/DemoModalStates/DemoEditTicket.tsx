@@ -7,12 +7,11 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { DemoProject, DemoTicket } from "../../../TypeInterfaces/Types";
 
 export const DemoEditTicket = () => {
-
     const { selectedTicket, setSelectedTicket} : any = useContext(AppContext);
     const { auth } : any = useAuth();
     const token = auth?.jwt;
     const id = auth?.currentUserId;
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["DEMOADMIN"];
     const [ticketTitle, setTicketTitle] = useState<string>("");
     const [ticketInfo, setTicketInfo] = useState<string>("");
     const [priorityStatus, setPriorityStatus] = useState<any>("");

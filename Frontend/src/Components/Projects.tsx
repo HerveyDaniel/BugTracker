@@ -15,7 +15,7 @@ export const Projects = () => {
     const {setUsers, setCurrentProject, setSelectedTicket, setModalState, setModalContent} : any = useContext(AppContext);
 
     const navigate = useNavigate();
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
+    const authRole = ["ADMIN"];
     const [userProject, setUserProject] = useState<any>({});
     let currentProjectId : number = 0;
     const queryClient = useQueryClient();

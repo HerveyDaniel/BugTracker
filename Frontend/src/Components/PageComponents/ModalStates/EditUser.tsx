@@ -12,7 +12,6 @@ export const EditUser = () => {
     const { selectedUserId, selectedUser } : any = useContext(AppContext);
     const { auth } : any = useAuth();
     const token = auth?.jwt;
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [role, setRole] = useState<any>({});

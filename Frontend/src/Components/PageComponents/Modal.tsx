@@ -62,12 +62,3 @@ export const Modal = ({setModalState}: any) => {
         </div>
     )
 }
-/* Create a state within the main App component that represents whether
-or not the modal is rendered by the onClick of a button. It would look
-something like this: onClick={()=>{setModal(true)}}
-{setModalState(false)}*/
-
-/* The onClick of the X button in the modal above would look like this:
-onClick={()=>{setModal(false)}}. WILL NEED TO ACCESS THE setModal
-METHOD FROM THE MAIN APP COMPONENT. WILL PROBABLY NEED USECONTEXT HOOK
-OR REDUX TOOLKIT(OR PROPS IF REALLY LAZY)*/

@@ -8,11 +8,9 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { DemoUser } from "../../../TypeInterfaces/Types";
 
 export const DemoEditUser = () => {
-
     const { selectedUserId, selectedUser } : any = useContext(AppContext);
     const { auth } : any = useAuth();
     const token = auth?.jwt;
-    const authRole = ["DEMOADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [role, setRole] = useState<any>({});

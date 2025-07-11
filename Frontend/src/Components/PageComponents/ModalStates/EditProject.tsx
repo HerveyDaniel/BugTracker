@@ -12,7 +12,6 @@ export const EditProject = () => {
     const { currentProject } : any = useContext(AppContext);
     const { auth } : any = useAuth();
     const token = auth?.jwt;
-    const authRole = ["ADMIN"];/* Temporary fix; find out how to get prop from App.tsx */
     const [projectName, setProjectName] = useState<any>("");
     const [projectDescription, setProjectDescription] = useState<any>("");
     const [selectedUsers, setSelectedUsers] = useState<any>([]);

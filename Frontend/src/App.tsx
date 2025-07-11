@@ -19,33 +19,9 @@ import { DemoIndividualTicket } from './DemoComponents/DemoIndividualTicket'
 import { DemoProjects } from './DemoComponents/DemoProjects'
 import { DemoTickets } from './DemoComponents/DemoTickets'
 import { DemoModal } from './DemoComponents/DemoPageComponents/DemoModal'
-import { useQuery } from '@tanstack/react-query'
-import { getAllUsers } from './AxiosRequests/Requests'
-
-interface Project{
-
-}
-
-interface Ticket {
-
-}
-
-interface User {
-  id : number;
-  username : string;
-  password : string;
-  assignedProject : Project
-  assignedTickets : Ticket[];
-}
-
-interface DemoUser{
-
-}
 
 export const AppContext = createContext({});
-/* Sets an authentication useState above the return statement
-if false, will be redirected login; if true, gets sent to Home.
-Might have to use a Store to give a component access to modify this state*/
+
 function App() {
   const [isAuthenticated, setAuthentication] = useState<boolean>(true)
   const [showModal, setModalState] = useState<boolean>(false)
@@ -82,92 +58,11 @@ function App() {
     allowedRoles: ["DEMOADMIN"]
   }
 
-  const updateAllUsers = (newUser : any, id : any) => {
-    if(Array.isArray(newUser)){
-      const newUsersArray = [];
-      for(let i = 0; i < allUsers.length; i++) {
-        if(!(allUsers[i]?.id === id)) {
-            newUsersArray.push(allUsers[i]);
-        }
-      }
-      setAllUsers(newUsersArray)
-
-    } else if (typeof id !== 'undefined' && typeof newUser !== 'undefined') {
-      const newUsersArray = [];
-      for(let i = 0; i < allUsers.length; i++) {
-        if(allUsers[i]?.id === id){
-          allUsers[i] = newUser;
-          newUsersArray.push(allUsers[i]);
-        } else {
-          newUsersArray.push(allUsers[i]);
-        }
-      }
-      setAllUsers(newUsersArray)
-
-    } else {
-      setAllUsers([...allUsers, newUser]);
-    }
-  }
-
-  const updateAllTickets = (newTicket : any, id : any) => {
-    if(Array.isArray(newTicket)){
-      const newTicketArray = [];
-      for(let i = 0; i < allTickets.length; i++) {
-        if(!(allTickets[i]?.ticketId === id)) {
-            newTicketArray.push(allTickets[i]);
-        }
-      }
-      setAllTickets(newTicketArray)
-    } else if(typeof id !== 'undefined' && typeof newTicket !== 'undefined') {
-      const newTicketsArray = [];
-      for(let i = 0; i < allTickets.length; i++) {
-        if(allTickets[i]?.ticketId === id){
-          allTickets[i] = newTicket;
-          newTicketsArray.push(allTickets[i]);
-        } else {
-          newTicketsArray.push(allTickets[i]);
-        }
-      }
-      setAllTickets(newTicketsArray)
-
-    } else {
-      setAllTickets([...allTickets, newTicket]);
-    }
-  }
-
-  const updateAllProjects = (newProject : any, id : any) => {
-    if(Array.isArray(newProject)){
-      const newProjectsArray = [];
-      for(let i = 0; i < allProjects.length; i++) {
-        if(!(allProjects[i]?.projectId === id)) {
-            newProjectsArray.push(allProjects[i]);
-        }
-      }
-      setAllProjects(newProjectsArray)
-
-    } else if (typeof id !== 'undefined' && typeof newProject !== 'undefined'){
-      const newProjectsArray = [];
-      for(let i = 0; i < allProjects.length; i++) {
-        if(allProjects[i]?.projectId === id){
-          allProjects[i] = newProject;
-          newProjectsArray.push(allProjects[i]);
-        } else {
-          newProjectsArray.push(allProjects[i]);
-        }
-      }
-      setAllProjects(newProjectsArray)
-
-    } else {
-      setAllProjects([...allProjects, newProject]);
-    }
-  }
-
   const projectContextObj = {users, setUsers, currentUser, setCurrentUser, 
   tickets, setTickets, projects, setProjects, currentProjectId, setCurrentProjectId, 
   currentProject, setCurrentProject, selectedTicket, setSelectedTicket, modalContent, 
   selectedUserId, setSelectedUserId, setModalContent, setModalState, setDemoModalState, 
-  selectedUser, setSelectedUser, allUsers, setAllUsers, allProjects, setAllProjects, allTickets, setAllTickets,
-  updateAllUsers, updateAllProjects, updateAllTickets}
+  selectedUser, setSelectedUser, allUsers, setAllUsers, allProjects, setAllProjects, allTickets, setAllTickets}
 
   return (
     <>
@@ -202,7 +97,6 @@ function App() {
           <Route path="/unauthorized" element={<h2>User not authorized to view content.</h2>}/>
         </Route>
       </Routes>
-      <ReactQueryDevtools/>
     </div>
     </AppContext.Provider>
     </>
